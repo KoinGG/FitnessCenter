@@ -1,0 +1,50 @@
+﻿<Window x:Class="FitnessCenter.AuthorizationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"        
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FitnessCenter"
+        mc:Ignorable="d"
+        xmlns:viewModel="clr-namespace:FitnessCenter.ViewModels"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Authorization" MinHeight="400" MinWidth="400" Height="400" Width="400">
+    <Window.DataContext>
+        <viewModel:AuthorizationVM/>
+    </Window.DataContext>
+    <materialDesign:Card Background="{DynamicResource MaterialDesignPaper}">
+        <Grid>
+            <TextBlock 
+                Text="Авторизация"  Foreground="LightGray"
+                TextAlignment="Center"
+                HorizontalAlignment="Center" VerticalAlignment="Top"
+                FontSize="34" Margin="0,30,0,0" />
+            <TextBox 
+                materialDesign:HintAssist.Hint="Введите Логин"
+                Height="30" Width="220" BorderThickness="0.25" Cursor="IBeam"
+                Padding="7 5 0 0"
+                HorizontalAlignment="Center" VerticalAlignment="Top"
+                Text="{Binding Login}" Foreground="AliceBlue"
+                Margin="0,110,0,0" />
+            <PasswordBox
+                x:Name="PasswordBox"
+                materialDesign:HintAssist.Hint="Введите Пароль" Foreground="AliceBlue"
+                materialDesign:TextFieldAssist.HasClearButton="True"
+                HorizontalAlignment="Center" VerticalAlignment="Top"
+                Padding="7 5 0 0"
+                Height="30" Width="220" BorderThickness="0.25" Cursor="IBeam" Margin="0,160,0,0" />
+            <Button 
+                Command="{Binding LoginCommand}"
+                CommandParameter="{Binding ElementName=PasswordBox}"
+                Content="Go Ahead" VerticalContentAlignment="Center"
+                Name="btn_Auth" 
+                HorizontalAlignment="Center" VerticalAlignment="Top"
+                Height="40" Width="152" Cursor="Hand" Margin="0,225,0,0" />
+            <Button
+                Command="{Binding SignUpCommand}"
+                Content="Sign Up" VerticalContentAlignment="Center"
+                Name="btn_Reg" 
+                HorizontalAlignment="Center" VerticalAlignment="Top"
+                Height="30" Width="86" Cursor="Hand" Margin="0,290,0,0" />
+        </Grid>
+    </materialDesign:Card>
+</Window>

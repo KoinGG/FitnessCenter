@@ -1,0 +1,128 @@
+﻿<Window x:Class="FitnessCenter.Views.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"        
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FitnessCenter"
+        mc:Ignorable="d"
+        xmlns:viewModel="clr-namespace:FitnessCenter.ViewModels"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="AdminWindow" Height="800" Width="650">
+    <Window.DataContext>
+        <viewModel:AdminWindowVM/>
+    </Window.DataContext>
+    <materialDesign:Card Background="{DynamicResource MaterialDesignPaper}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="300"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Margin="25,0,0,0">
+                <Image Width="200" Height="110"
+                       HorizontalAlignment="Stretch" VerticalAlignment="Top"
+                       Margin="0,30,0,0"/>
+                <Rectangle Width="Auto" Height="1"
+                           VerticalAlignment="Top" Fill="White"
+                           Margin="0,30,0,0"/>
+                <TextBlock Text="{Binding User.Name}"
+                           Width="200" Height="30" Foreground="White"
+                           VerticalAlignment="Top" Margin="0,25,0,0"/>
+                <TextBlock Text="{Binding User.Surname}"
+                           Width="200" Height="30" Foreground="White"
+                           VerticalAlignment="Top" Margin="0,20,0,0"/>
+                <TextBlock Text="{Binding User.Email}"
+                           Width="200" Height="30" Foreground="White"
+                           VerticalAlignment="Top" Margin="0,20,0,0"/>
+                <TextBlock Text="{Binding User.PhoneNumber}"
+                           Width="200" Height="30" Foreground="White"
+                           VerticalAlignment="Top" Margin="0,20,0,0"/>
+                <Rectangle Width="Auto" Height="1"
+                           VerticalAlignment="Top" Fill="White"
+                           Margin="0,25,0,0"/>
+                <!--<TextBox Text="Баланс" Width="75" Height="30" 
+                         TextAlignment="Center" Foreground="White"
+                         FontSize="18" FontFamily="ArialNova"
+                         VerticalAlignment="Top" HorizontalAlignment="Left"
+                         Margin="40,25,0,0" />-->
+                <Rectangle Width="Auto" Height="1"
+                           VerticalAlignment="Top" Fill="White"
+                           Margin="0,80,0,0"/>
+                <!--<Button Width="150" Height="30"
+                        Content="Сменить Пароль" Name="btn_changePassword"
+                        Command="{Binding ChangePassword}"
+                        VerticalAlignment="Top" Margin="0,25,0,0"/>
+                <Button Width="150" Height="30"
+                        Content="Сменить Номер" Name="btn_changePhoneNum"
+                        Command="{Binding ChangePhoneNum}"
+                        VerticalAlignment="Top" Margin="0,20,0,0"/>
+                <Button Width="150" Height="30"
+                        Content="Сменить Емаил" Name="btn_changeEmail"
+                        Command="{Binding ChangeEmail}"
+                        VerticalAlignment="Top" Margin="0,20,0,0"/>-->
+                <Rectangle Width="Auto" Height="1"
+                           VerticalAlignment="Top" Fill="White"
+                           Margin="0,180,0,0"/>
+                <Button Width="150" Height="40"
+                        Content="Выйти" Name="btn_logOut"
+                        Command="{Binding LogOut}"
+                        VerticalAlignment="Top" Margin="0,40,0,0"/>
+            </StackPanel>
+            <Rectangle Grid.Column="1"
+                       Width="1" Height="Auto"
+                       HorizontalAlignment="Center" Fill="White"/>
+            <StackPanel Grid.Column="2" Margin="0,0,25,0">
+                <Rectangle Width="Auto" Height="1"
+                           VerticalAlignment="Top" Fill="White"
+                           Margin="0,40,0,0"/>
+                <Button Content="Добавить Абонемент" Width="250" Height="45"
+                        Command="{Binding AddSubscription}"
+                        FontSize="20" FontFamily="ArialNova"
+                        VerticalAlignment="Top" HorizontalAlignment="Center"                       
+                        Margin="0,30,0,0" Cursor="Arrow"/>
+                <Rectangle Width="Auto" Height="1"
+                           VerticalAlignment="Top" Fill="White"
+                           Margin="0,25,0,0"/>
+                <Rectangle Width="Auto" Height="1"
+                           VerticalAlignment="Top" Fill="White"
+                           Margin="0,35,0,0"/>
+                <Button Content="Добавить Тренера" Width="250" Height="45"
+                        Command="{Binding AddCoach}"
+                        FontSize="20" FontFamily="ArialNova"
+                        VerticalAlignment="Top" HorizontalAlignment="Center"
+                        Margin="0,30,0,0" Cursor="Arrow"/>
+                <Rectangle Width="Auto" Height="1"
+                           VerticalAlignment="Top" Fill="White"
+                           Margin="0,25,0,0"/>
+                <Rectangle Width="Auto" Height="1"
+                           VerticalAlignment="Top" Fill="White"
+                           Margin="0,35,0,0"/>
+                <Button Content="Добавить Тренировку" Width="250" Height="45"
+                        Command="{Binding AddTraining}"
+                        FontSize="20" FontFamily="ArialNova"
+                        VerticalAlignment="Top" HorizontalAlignment="Center"
+                        Margin="0,30,0,0" Cursor="Arrow"/>
+                <Rectangle Width="Auto" Height="1"
+                           VerticalAlignment="Top" Fill="White"
+                           Margin="0,25,0,0"/>
+                <Rectangle Width="Auto" Height="1"
+                           VerticalAlignment="Top" Fill="White"
+                           Margin="0,35,0,0"/>
+                <TextBlock Text="Записаться на Тренировку" Width="200" Height="Auto"
+                         TextAlignment="Center" Foreground="White"
+                         FontSize="24" FontFamily="ArialNova" TextWrapping="Wrap"
+                         VerticalAlignment="Top" HorizontalAlignment="Center"
+                         Margin="0,20,0,0"/>
+                <Button Content="Записаться" Width="150" Height="45"
+                        Command="{Binding Schedule}"
+                        FontSize="20" FontFamily="ArialNova"
+                        VerticalAlignment="Top" HorizontalAlignment="Center"
+                        Margin="0,35,0,0" Cursor="Hand"/>
+                <Rectangle Width="Auto" Height="1"
+                           VerticalAlignment="Top" Fill="White"
+                           Margin="0,25,0,0"/>
+
+            </StackPanel>
+        </Grid>
+    </materialDesign:Card>
+</Window>
