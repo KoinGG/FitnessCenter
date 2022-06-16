@@ -15,12 +15,13 @@
         <Grid>
             <TextBlock 
                 Text="Авторизация"  Foreground="LightGray"
-                TextAlignment="Center"
+                TextAlignment="Center" FontFamily="ArialNova"
                 HorizontalAlignment="Center" VerticalAlignment="Top"
                 FontSize="34" Margin="0,30,0,0" />
             <TextBox 
                 materialDesign:HintAssist.Hint="Введите Логин"
                 Height="30" Width="220" BorderThickness="0.25" Cursor="IBeam"
+                FontSize="14" FontFamily="ArialNova"
                 Padding="7 5 0 0"
                 HorizontalAlignment="Center" VerticalAlignment="Top"
                 Text="{Binding Login}" Foreground="AliceBlue"
@@ -30,18 +31,21 @@
                 materialDesign:HintAssist.Hint="Введите Пароль" Foreground="AliceBlue"
                 materialDesign:TextFieldAssist.HasClearButton="True"
                 HorizontalAlignment="Center" VerticalAlignment="Top"
+                FontSize="14" FontFamily="ArialNova"
                 Padding="7 5 0 0"
                 Height="30" Width="220" BorderThickness="0.25" Cursor="IBeam" Margin="0,160,0,0" />
             <Button 
                 Command="{Binding LoginCommand}"
                 CommandParameter="{Binding ElementName=PasswordBox}"
                 Content="Go Ahead" VerticalContentAlignment="Center"
+                FontSize="14" FontFamily="ArialNova"
                 Name="btn_Auth" 
                 HorizontalAlignment="Center" VerticalAlignment="Top"
                 Height="40" Width="152" Cursor="Hand" Margin="0,225,0,0" />
             <Button
                 Command="{Binding SignUpCommand}"
                 Content="Sign Up" VerticalContentAlignment="Center"
+                FontSize="14" FontFamily="ArialNova"
                 Name="btn_Reg" 
                 HorizontalAlignment="Center" VerticalAlignment="Top"
                 Height="30" Width="86" Cursor="Hand" Margin="0,290,0,0" />

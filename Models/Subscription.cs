@@ -12,7 +12,7 @@ namespace FitnessCenter
 
         public int IdSubscription { get; set; }
         public int VisitsAmount { get; set; }
-        public DateTime Validity { get; set; }
+        public string Validity { get; set; }
         public int IdSubscriptionType { get; set; }
         public int IdSchedule { get; set; }
         public decimal Cost { get; set; }

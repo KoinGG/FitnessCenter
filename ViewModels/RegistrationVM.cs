@@ -35,7 +35,7 @@ namespace FitnessCenter.ViewModels
                     {
                         User user = new User()
                         {
-                            Name = RegistrationWindow.NameBox.Text,
+                            //Name = RegistrationWindow.NameBox.Text,
                         };
                     }));
             }
