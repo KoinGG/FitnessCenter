@@ -103,9 +103,11 @@ CREATE TABLE [Order]
 
 INSERT INTO [RoleType]([Name]) VALUES
 (N'User'),
-(N'Admin'),
-(N'Coach');
+(N'Admin');
 
 INSERT INTO [User]([Name], Surname, Patronymic, Email, [Login], [Password], PhoneNumber, idRoleType) VALUES
 (N'Ivan', N'Bezmamov', N'Errorovich', N'ivan@mail.ru', N'ivan', N'123', N'79609876522', 1),
 (N'Grisha', N'Kolmakov', N'Igorevich', N'rexv@mail.ru', N'rexv', N'321', N'79609266272', 2);
+
+INSERT INTO [Coach]([Name], Surname, [Description]) VALUES
+(N'Gena', N'Bukin', N'The best coach in the world');

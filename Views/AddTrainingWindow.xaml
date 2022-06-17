@@ -26,29 +26,18 @@
                     Width="Auto" Height="1" 
                     VerticalAlignment="Top" Fill="White"
                     Margin="0,35,0,0"/>
-                <ListBox 
+                <ComboBox
                     x:Name="TrainingTypeBox"                     
                     materialDesign:HintAssist.Hint="Укажите Имя Тренера"
                     Height="35" Width="220" BorderThickness="0.25" Cursor="IBeam"
                     FontSize="14" FontFamily="ArialNova"
                     VerticalContentAlignment="Center"
-                    ItemsSource="{Binding }"
+                    ItemsSource="{Binding Coaches}"
                     Padding="7 5 0 0"
                     HorizontalAlignment="Center" VerticalAlignment="Top"
                     Foreground="AliceBlue"
                     Margin="0,30,0,0" />
-                <!--<ListBox
-                    IsEnabled="{Binding IsChecked, ElementName=EnableListBox}">
-                        <TextBlock
-                            Text="Plain" />
-                        <TextBlock
-                            Text="Old" />
-                        <TextBlock
-                            Text="ListBox" />
-                        <TextBlock
-                            Text="Full of junk" />
-                </ListBox>-->
-                <TextBox 
+                <materialDesign:TimePicker
                     x:Name="TrainingTimeBox"
                     materialDesign:HintAssist.Hint="Укажите Время Тренировки"
                     Height="35" Width="220" BorderThickness="0.25" Cursor="IBeam"
@@ -75,12 +64,12 @@
                 <Button 
                     Command="{Binding AddTrainingAccept}" x:Name="btn_regAccept"
                     CommandParameter="{Binding ElementName = }"
-                    Content="Accept" VerticalContentAlignment="Center"
+                    Content="Подтвердить" VerticalContentAlignment="Center"
                     FontSize="14" FontFamily="ArialNova"
                     HorizontalAlignment="Center" VerticalAlignment="Top"
                     Height="40" Width="152" Cursor="Hand" Margin="0,30,0,0" />
                 <Button
-                    Content="Cancel" VerticalContentAlignment="Center"
+                    Content="Отмена" VerticalContentAlignment="Center"
                     Command="{Binding Cancel}" Name="btn_Reg"
                     HorizontalAlignment="Center" VerticalAlignment="Top"
                     FontSize="14" FontFamily="ArialNova"

@@ -46,13 +46,13 @@
                     HorizontalAlignment="Center" VerticalAlignment="Top"
                     Foreground="AliceBlue"
                     Margin="0,20,0,0" />
-                <ListBox 
+                <ComboBox
                     x:Name="SubscriptionTypeBox"                     
-                    materialDesign:HintAssist.Hint="Укажите Имя Тренера"
+                    materialDesign:HintAssist.Hint="Укажите Тип Абонемента"
                     Height="35" Width="240" BorderThickness="0.25" Cursor="IBeam"
                     FontSize="14" FontFamily="ArialNova"
                     VerticalContentAlignment="Center"
-                    ItemsSource="{Binding }"
+                    ItemsSource="{Binding SubscriptionType}"
                     Padding="7 5 0 0"
                     HorizontalAlignment="Center" VerticalAlignment="Top"
                     Foreground="AliceBlue"
@@ -74,12 +74,12 @@
                 <Button 
                     Command="{Binding AddSubscriptionAccept}" x:Name="btn_regAccept"
                     CommandParameter="{Binding ElementName = }"
-                    Content="Accept" VerticalContentAlignment="Center"
+                    Content="Подтвердить" VerticalContentAlignment="Center"
                     FontSize="14" FontFamily="ArialNova"
                     HorizontalAlignment="Center" VerticalAlignment="Top"
                     Height="40" Width="152" Cursor="Hand" Margin="0,30,0,0" />
                 <Button
-                    Content="Cancel" VerticalContentAlignment="Center"
+                    Content="Отмена" VerticalContentAlignment="Center"
                     Command="{Binding Cancel}" Name="btn_Reg"
                     HorizontalAlignment="Center" VerticalAlignment="Top"
                     FontSize="14" FontFamily="ArialNova"

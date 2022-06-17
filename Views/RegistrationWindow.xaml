@@ -70,12 +70,12 @@
             <Button 
                 Command="{Binding RegistrationAccept}"
                 CommandParameter="{Binding ElementName=NameBox}"
-                Content="Accept" VerticalContentAlignment="Center"
+                Content="Подтвердить" VerticalContentAlignment="Center"
                 Name="btn_regAccept" 
                 HorizontalAlignment="Center" VerticalAlignment="Top"
                 Height="40" Width="152" Cursor="Hand" Margin="0,450,0,0" />
             <Button
-                Content="Sign In" VerticalContentAlignment="Center"
+                Content="Войти" VerticalContentAlignment="Center"
                 Command="{Binding SignIn}" Name="btn_Reg"
                 HorizontalAlignment="Center" VerticalAlignment="Top"
                 Height="30" Width="86" Cursor="Hand" Margin="0,505,0,0" />

@@ -16,7 +16,7 @@ namespace FitnessCenter.ViewModels
     {
         private RelayCommand _logOut;
         private RelayCommand _schedule;
-        private User user;
+        private User _user;
 
         public RelayCommand LogOut
         {
@@ -34,10 +34,11 @@ namespace FitnessCenter.ViewModels
 
         public User User
         {
-            get { return user; }
+            //get { return _user; }
+            get => _user;
             set 
             { 
-                user = value; 
+                _user = value; 
                 OnPropertyChanged();
             }
         }

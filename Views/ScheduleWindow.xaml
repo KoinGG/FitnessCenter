@@ -7,13 +7,63 @@
         mc:Ignorable="d"
         xmlns:viewModel="clr-namespace:FitnessCenter.ViewModels"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="ScheduleWindow" Height="450" Width="800">
+        Title="ScheduleWindow" MinHeight="450" MinWidth="450" Height="450" Width="450">
     <!--<Window.DataContext>
         <viewModel:ScheduleWindow/>
     </Window.DataContext>-->
     <materialDesign:Card Background="{DynamicResource MaterialDesignPaper}">
-        <Grid>
-            
+        <Grid x:Name="ScheduleGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width = "450*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Margin="15,0,15,0">
+                <TextBlock 
+                    Text="Запись на Тренировку" Foreground="LightGray"
+                    TextAlignment="Center"
+                    HorizontalAlignment="Center" VerticalAlignment="Top"
+                    FontSize="34" FontFamily="ArialNova" Margin="0,35,0,0" />
+                <Rectangle
+                    Width="Auto" Height="1" 
+                    VerticalAlignment="Top" Fill="White"
+                    Margin="0,35,0,0"/>
+                <ComboBox
+                    x:Name="ScheduleTrainingBox"                     
+                    materialDesign:HintAssist.Hint="Выберите Тренировку"
+                    Height="35" Width="240" BorderThickness="0.25" Cursor="IBeam"
+                    FontSize="14" FontFamily="ArialNova"
+                    VerticalContentAlignment="Center"
+                    Padding="7 5 0 0"
+                    HorizontalAlignment="Center" VerticalAlignment="Top"
+                    Foreground="AliceBlue"
+                    Margin="0,30,0,0" />
+                <TextBox 
+                    x:Name="ScheduleTrainingCountBox"
+                    materialDesign:HintAssist.Hint="Укажите Количество Тренировок"
+                    Height="35" Width="240" BorderThickness="0.25" Cursor="IBeam"
+                    FontSize="14" FontFamily="ArialNova"
+                    VerticalContentAlignment="Center"
+                    Padding="7 5 0 0"
+                    HorizontalAlignment="Center" VerticalAlignment="Top"
+                    Foreground="AliceBlue"
+                    Margin="0,20,0,0" />
+                <Rectangle
+                    Width="Auto" Height="1" 
+                    VerticalAlignment="Top" Fill="White"
+                    Margin="0,35,0,0"/>
+                <Button 
+                    Command="{Binding ScheduleAccept}" x:Name="btn_scheduleAccept"
+                    CommandParameter="{Binding ElementName = }"
+                    Content="Подтвердить" VerticalContentAlignment="Center"
+                    FontSize="14" FontFamily="ArialNova"
+                    HorizontalAlignment="Center" VerticalAlignment="Top"
+                    Height="40" Width="152" Cursor="Hand" Margin="0,30,0,0" />
+                <Button
+                    Content="Отмена" VerticalContentAlignment="Center"
+                    Command="{Binding Cancel}" Name="btn_Reg"
+                    HorizontalAlignment="Center" VerticalAlignment="Top"
+                    FontSize="14" FontFamily="ArialNova"
+                    Height="30" Width="86" Cursor="Hand" Margin="0,25,0,0" />
+            </StackPanel>
         </Grid>
     </materialDesign:Card>
 </Window>

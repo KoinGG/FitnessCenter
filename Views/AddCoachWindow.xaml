@@ -63,12 +63,12 @@
                 <Button 
                     Command="{Binding AddCoachAccept}" x:Name="btn_regAccept"
                     CommandParameter="{Binding ElementName = }"
-                    Content="Accept" VerticalContentAlignment="Center"
+                    Content="Подтвердить" VerticalContentAlignment="Center"
                     FontSize="14" FontFamily="ArialNova"
                     HorizontalAlignment="Center" VerticalAlignment="Top"
                     Height="40" Width="152" Cursor="Hand" Margin="0,30,0,0" />
                 <Button
-                    Content="Cancel" VerticalContentAlignment="Center"
+                    Content="Отмена" VerticalContentAlignment="Center"
                     Command="{Binding Cancel}" Name="btn_Reg"
                     HorizontalAlignment="Center" VerticalAlignment="Top"
                     FontSize="14" FontFamily="ArialNova"

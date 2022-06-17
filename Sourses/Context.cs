@@ -186,7 +186,7 @@ namespace FitnessCenter
 
                 entity.Property(e => e.IdSubscriptionType).HasColumnName("idSubscriptionType");
 
-                entity.Property(e => e.Validity).HasColumnType("datetime");
+                entity.Property(e => e.Validity).HasMaxLength(25);
 
                 entity.HasOne(d => d.IdScheduleNavigation)
                     .WithMany(p => p.Subscriptions)
