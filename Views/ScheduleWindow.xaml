@@ -27,7 +27,9 @@
                     VerticalAlignment="Top" Fill="White"
                     Margin="0,35,0,0"/>
                 <ComboBox
-                    x:Name="ScheduleTrainingBox"                     
+                    x:Name="ScheduleTrainingBox"
+                    ItemsSource="{Binding Training}"
+                    SelectedItem="{Binding SelectedTraining}"
                     materialDesign:HintAssist.Hint="Выберите Тренировку"
                     Height="35" Width="240" BorderThickness="0.25" Cursor="IBeam"
                     FontSize="14" FontFamily="ArialNova"
@@ -35,7 +37,13 @@
                     Padding="7 5 0 0"
                     HorizontalAlignment="Center" VerticalAlignment="Top"
                     Foreground="AliceBlue"
-                    Margin="0,30,0,0" />
+                    Margin="0,30,0,0">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Schedule.IdTraining}" FontSize="14"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
                 <TextBox 
                     x:Name="ScheduleTrainingCountBox"
                     materialDesign:HintAssist.Hint="Укажите Количество Тренировок"

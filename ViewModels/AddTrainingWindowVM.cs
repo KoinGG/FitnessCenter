@@ -15,9 +15,11 @@ namespace FitnessCenter.ViewModels
     {
         private RelayCommand _cancel;
         private RelayCommand _addTrainingAccept;
+
         private ObservableCollection<TrainingType> _trainingTypes;
         private TrainingType _trainingType;
-        private TrainingType selectedTrainingType;
+        private TrainingType _selectedTrainingType;
+
         private Training _training = new Training();
 
         public RelayCommand Cancel
@@ -57,7 +59,7 @@ namespace FitnessCenter.ViewModels
             get => _trainingTypes;
             set => _trainingTypes = value;
         }
-        public TrainingType Coach
+        public TrainingType TrainingType
         {
             get => _trainingType;
             set
@@ -66,13 +68,12 @@ namespace FitnessCenter.ViewModels
                 OnPropertyChanged();
             }
         }
-
-        public TrainingType SelectedCoach
+        public TrainingType SelectedTrainingType
         {
-            get { return selectedTrainingType; }
+            get => _selectedTrainingType;
             set 
             { 
-                selectedTrainingType = value;
+                _selectedTrainingType = value;
                 OnPropertyChanged();
             }
         }

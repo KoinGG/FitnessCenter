@@ -53,10 +53,17 @@
                     FontSize="14" FontFamily="ArialNova"
                     VerticalContentAlignment="Center"
                     ItemsSource="{Binding SubscriptionType}"
+                    SelectedItem="{Binding SelectedSubscriptionType}"
                     Padding="7 5 0 0"
                     HorizontalAlignment="Center" VerticalAlignment="Top"
                     Foreground="AliceBlue"
-                    Margin="0,20,0,0" />
+                    Margin="0,20,0,0">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Subscription.IdSubscriptionType}" FontSize="14" />
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
                 <TextBox 
                     x:Name="SubscriptionCostBox" Text="{Binding Subscription.Cost}"
                     materialDesign:HintAssist.Hint="Укажите Стоимость"
