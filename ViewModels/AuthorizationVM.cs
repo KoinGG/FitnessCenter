@@ -61,12 +61,6 @@ namespace FitnessCenter.ViewModels
                                 App.Current.MainWindow.Close();
                                 adminWindow.Show();
                             }
-                            else if (user.IdRoleType == 3) // coach
-                            {
-                                CoachWindow coachWindow = new CoachWindow();
-                                App.Current.MainWindow.Close();
-                                coachWindow.Show();
-                            }
                         }
                     },
                     (x) =>
