@@ -13,6 +13,17 @@ namespace FitnessCenter.ViewModels
     {
         private RelayCommand _cancel;
         private RelayCommand _addCoachAccept;
+        private Coach _coach = new Coach();
+
+        public Coach Coach
+        {
+            get => _coach;
+            set
+            {
+                _coach = value;
+                OnPropertyChanged();
+            }
+        }
 
         public RelayCommand Cancel
         {
@@ -22,14 +33,26 @@ namespace FitnessCenter.ViewModels
                 if (dialogResult == MessageBoxResult.Yes)
                 {
                     AdminWindow adminWindow = new AdminWindow();
-                    Application.Current.Windows[0].Close();
+                    App.Current.Windows[0].Close();
                     adminWindow.Show();
                 }
             });
         }
         public RelayCommand AddCoachAccept
         {
-            get => _addCoachAccept;
+            get
+            {
+                return _addCoachAccept ??
+                    (_addCoachAccept = new RelayCommand((x) =>
+                    {
+                        Helper.GetContext().Coaches.Add(Coach);
+                        Helper.GetContext().SaveChanges();
+
+                        AdminWindow adminWindow = new AdminWindow();
+                        App.Current.Windows[0].Close();
+                        adminWindow.Show();
+                    }));
+            }
         }
     }
 }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace FitnessCenter
 {
-    public partial class training
+    public partial class Training
     {
-        public training()
+        public Training()
         {
             Schedules = new HashSet<Schedule>();
         }

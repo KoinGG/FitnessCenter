@@ -7,13 +7,13 @@ namespace FitnessCenter
     {
         public TrainingType()
         {
-            training = new HashSet<training>();
+            Training = new HashSet<Training>();
         }
 
         public int IdTrainingType { get; set; }
         public string Name { get; set; } = null!;
         public string Description { get; set; } = null!;
 
-        public virtual ICollection<training> training { get; set; }
+        public virtual ICollection<Training> Training { get; set; }
     }
 }

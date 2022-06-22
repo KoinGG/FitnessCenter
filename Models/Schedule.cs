@@ -14,7 +14,7 @@ namespace FitnessCenter
         public int IdTraining { get; set; }
         public int TrainingCount { get; set; }
 
-        public virtual training IdTrainingNavigation { get; set; } = null!;
+        public virtual Training IdTrainingNavigation { get; set; } = null!;
         public virtual ICollection<Subscription> Subscriptions { get; set; }
     }
 }

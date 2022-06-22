@@ -27,7 +27,7 @@
                     VerticalAlignment="Top" Fill="White"
                     Margin="0,35,0,0"/>
                 <TextBox 
-                    x:Name="SubscriptionVisitsAmountBox"                     
+                    x:Name="SubscriptionVisitsAmountBox" Text="{Binding Subscription.Amount}"              
                     materialDesign:HintAssist.Hint="Укажите Количество Посещений"
                     Height="35" Width="240" BorderThickness="0.25" Cursor="IBeam"
                     FontSize="14" FontFamily="ArialNova"
@@ -37,7 +37,7 @@
                     Foreground="AliceBlue"
                     Margin="0,30,0,0" />
                 <TextBox 
-                    x:Name="SubscriptionValidityBox"
+                    x:Name="SubscriptionValidityBox" Text="{Binding Subscription.Validity}"
                     materialDesign:HintAssist.Hint="Укажите Срок Действия"
                     Height="35" Width="240" BorderThickness="0.25" Cursor="IBeam"
                     FontSize="14" FontFamily="ArialNova"
@@ -47,7 +47,7 @@
                     Foreground="AliceBlue"
                     Margin="0,20,0,0" />
                 <ComboBox
-                    x:Name="SubscriptionTypeBox"                     
+                    x:Name="SubscriptionTypeBox"                 
                     materialDesign:HintAssist.Hint="Укажите Тип Абонемента"
                     Height="35" Width="240" BorderThickness="0.25" Cursor="IBeam"
                     FontSize="14" FontFamily="ArialNova"
@@ -58,7 +58,7 @@
                     Foreground="AliceBlue"
                     Margin="0,20,0,0" />
                 <TextBox 
-                    x:Name="SubscriptionCostBox"
+                    x:Name="SubscriptionCostBox" Text="{Binding Subscription.Cost}"
                     materialDesign:HintAssist.Hint="Укажите Стоимость"
                     Height="35" Width="240" BorderThickness="0.25" Cursor="IBeam"
                     FontSize="14" FontFamily="ArialNova"
@@ -73,7 +73,6 @@
                     Margin="0,35,0,0"/>
                 <Button 
                     Command="{Binding AddSubscriptionAccept}" x:Name="btn_regAccept"
-                    CommandParameter="{Binding ElementName = }"
                     Content="Подтвердить" VerticalContentAlignment="Center"
                     FontSize="14" FontFamily="ArialNova"
                     HorizontalAlignment="Center" VerticalAlignment="Top"

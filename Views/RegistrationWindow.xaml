@@ -18,49 +18,55 @@
                 TextAlignment="Center"
                 HorizontalAlignment="Center" VerticalAlignment="Top"
                 FontSize="34" Margin="0,30,0,0" />
-            <TextBox x:Name="NameBox"                     
+            <TextBox 
+                x:Name="NameBox" Text="{Binding User.Name}"                 
                 materialDesign:HintAssist.Hint="Укажите ваше Имя"
                 Height="30" Width="220" BorderThickness="0.25" Cursor="IBeam"
                 Padding="7 5 0 0"
                 HorizontalAlignment="Center" VerticalAlignment="Top"
                 Foreground="AliceBlue"
-                Margin="0,110,0,0" />
-            <TextBox x:Name="SurnameBox"
+                Margin="0,110,0,0"/>
+            <TextBox 
+                x:Name="SurnameBox" Text="{Binding User.Surname}"
                 materialDesign:HintAssist.Hint="Укажите вашу Фамилию"
                 Height="30" Width="220" BorderThickness="0.25" Cursor="IBeam"
                 Padding="7 5 0 0"
                 HorizontalAlignment="Center" VerticalAlignment="Top"
                 Foreground="AliceBlue"
-                Margin="0,155,0,0" />
-            <TextBox x:Name="PatronymicBox"
+                Margin="0,155,0,0"/>
+            <TextBox 
+                x:Name="PatronymicBox" Text="{Binding User.Patronymic}"
                 materialDesign:HintAssist.Hint="Укажите ваше Отчество"
                 Height="30" Width="220" BorderThickness="0.25" Cursor="IBeam"
                 Padding="7 5 0 0"
                 HorizontalAlignment="Center" VerticalAlignment="Top"
                 Foreground="AliceBlue"
                 Margin="0,200,0,0" />
-            <TextBox x:Name="LoginBox"
+            <TextBox 
+                x:Name="LoginBox" Text="{Binding User.Login}"
                 materialDesign:HintAssist.Hint="Введите Логин"
                 Height="30" Width="220" BorderThickness="0.25" Cursor="IBeam"
                 Padding="7 5 0 0"
                 HorizontalAlignment="Center" VerticalAlignment="Top"
                 Foreground="AliceBlue"
                 Margin="0,245,0,0" />
-            <PasswordBox
-                x:Name="PasswordBox"
+            <TextBox
+                x:Name="PasswordBox" Text="{Binding User.Password}"                
                 materialDesign:HintAssist.Hint="Введите Пароль" Foreground="AliceBlue"
                 materialDesign:TextFieldAssist.HasClearButton="True"
                 HorizontalAlignment="Center" VerticalAlignment="Top"
                 Padding="7 5 0 0"
                 Height="30" Width="220" BorderThickness="0.25" Cursor="IBeam" Margin="0,290,0,0" />
-            <TextBox x:Name="PhoneNumberBox"
+            <TextBox 
+                x:Name="PhoneNumberBox" Text="{Binding User.PhoneNumber}"
                 materialDesign:HintAssist.Hint="Укажите Номер Телефона"
                 Height="30" Width="220" BorderThickness="0.25" Cursor="IBeam"
                 Padding="7 5 0 0"
                 HorizontalAlignment="Center" VerticalAlignment="Top"
                 Foreground="AliceBlue"
                 Margin="0,335,0,0" />
-            <TextBox x:Name="EmailBox"
+            <TextBox 
+                x:Name="EmailBox" Text="{Binding User.Email}"
                 materialDesign:HintAssist.Hint="Укажите E-mail"
                 Height="30" Width="220" BorderThickness="0.25" Cursor="IBeam"
                 Padding="7 5 0 0"
@@ -69,7 +75,6 @@
                 Margin="0,380,0,0" />
             <Button 
                 Command="{Binding RegistrationAccept}"
-                CommandParameter="{Binding ElementName=NameBox}"
                 Content="Подтвердить" VerticalContentAlignment="Center"
                 Name="btn_regAccept" 
                 HorizontalAlignment="Center" VerticalAlignment="Top"

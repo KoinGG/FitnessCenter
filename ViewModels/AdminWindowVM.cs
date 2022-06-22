@@ -1,4 +1,5 @@
 ﻿using FitnessCenter.Sourses;
+using FitnessCenter.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +12,11 @@ namespace FitnessCenter.ViewModels
     public class AdminWindowVM : BaseVM
     {
         private RelayCommand _logOut;
+        private RelayCommand _addSubscription;
+        private RelayCommand _addCoach;
+        private RelayCommand _addTraining;
         private RelayCommand _schedule;
-        private User user;
+        private User _user;
 
         public RelayCommand LogOut
         {
@@ -28,12 +32,66 @@ namespace FitnessCenter.ViewModels
             });
         }
 
+        public RelayCommand AddSubscription
+        {
+            get
+            {
+                return _addSubscription ??
+                    (_addSubscription = new RelayCommand((x) =>
+                    {
+                        AddSubscriptionWindow addSubscriptionWindow = new AddSubscriptionWindow();
+                        App.Current.Windows[0].Close();
+                        addSubscriptionWindow.Show();
+                    }));
+            }
+        }
+        public RelayCommand AddCoach
+        {
+            get
+            {
+                return _addCoach ??
+                    (_addCoach = new RelayCommand((x) =>
+                    {
+                        AddCoachWindow addCoachWindow = new AddCoachWindow();
+                        App.Current.Windows[0].Close();
+                        addCoachWindow.Show();
+                    }));
+            }
+        }
+        public RelayCommand AddTraining
+        {
+            get
+            {
+                return _addTraining ??
+                    (_addTraining = new RelayCommand((x) =>
+                    {
+                        AddTrainingWindow addTrainingWindow = new AddTrainingWindow();
+                        App.Current.Windows[0].Close();
+                        addTrainingWindow.Show();
+                    }));
+            }
+        }
+
+        public RelayCommand Schedule
+        {
+            get
+            {
+                return _schedule ??
+                    (_schedule = new RelayCommand((x) =>
+                    {
+                        ScheduleWindow scheduleWindow = new ScheduleWindow();
+                        App.Current.Windows[0].Close();
+                        scheduleWindow.Show();
+                    }));
+            }
+        }
+
         public User User
         {
-            get { return user; }
+            get => _user;
             set
             {
-                user = value;
+                _user = value;
                 OnPropertyChanged();
             }
         }

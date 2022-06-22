@@ -33,7 +33,7 @@ namespace FitnessCenter.ViewModels
             get => new(x =>
             {
                 RegistrationWindow RrgistrationWindow = new RegistrationWindow();
-                Application.Current.Windows[0].Close();
+                App.Current.Windows[0].Close();
                 RrgistrationWindow.Show();
             });
         }
@@ -52,34 +52,34 @@ namespace FitnessCenter.ViewModels
                             if (user.IdRoleType == 1) // user
                             {
                                 UserWindow userWindow = new UserWindow();
-                                Application.Current.MainWindow.Close();
+                                App.Current.MainWindow.Close();
                                 userWindow.Show();
                             }
                             else if (user.IdRoleType == 2) // admin
                             {
                                 AdminWindow adminWindow = new AdminWindow();
-                                Application.Current.MainWindow.Close();
+                                App.Current.MainWindow.Close();
                                 adminWindow.Show();
                             }
                             else if (user.IdRoleType == 3) // coach
                             {
                                 CoachWindow coachWindow = new CoachWindow();
-                                Application.Current.MainWindow.Close();
+                                App.Current.MainWindow.Close();
                                 coachWindow.Show();
                             }
                         }
-                    }/*,*/ 
-                    //(x) =>
-                    //{
-                    //    var passwordBox = x as PasswordBox;
-                    //    if (passwordBox == null)
-                    //    {
-                    //        return false;
-                    //    }
+                    },
+                    (x) =>
+                    {
+                        var passwordBox = x as PasswordBox;
+                        if (passwordBox == null)
+                        {
+                            return false;
+                        }
 
-                        //string password = passwordBox.Password;
-                        //return (string.IsNullOrEmpty(_login) == false && string.IsNullOrEmpty(password) == false);
-                    /*}*/));
+                        string password = passwordBox.Password;
+                        return (string.IsNullOrEmpty(_login) == false && string.IsNullOrEmpty(password) == false);
+                    }));
             }
         }
     }

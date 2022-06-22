@@ -15,8 +15,10 @@ namespace FitnessCenter.ViewModels
     {
         private RelayCommand _cancel;
         private RelayCommand _addTrainingAccept;
-        private ObservableCollection<Coach> _coaches;
-        private Coach _coach;
+        private ObservableCollection<TrainingType> _trainingTypes;
+        private TrainingType _trainingType;
+        private TrainingType selectedTrainingType;
+        private Training _training = new Training();
 
         public RelayCommand Cancel
         {
@@ -33,27 +35,61 @@ namespace FitnessCenter.ViewModels
         }
         public RelayCommand AddTrainingAccept
         {
-            get => _addTrainingAccept;
+            get
+            {
+                return _addTrainingAccept ??
+                    (_addTrainingAccept = new RelayCommand((x) =>
+                    {
+
+
+                        Helper.GetContext().Trainings.Add(Training);
+                        Helper.GetContext().SaveChanges();
+
+                        AdminWindow adminWindow = new AdminWindow();
+                        App.Current.Windows[0].Close();
+                        adminWindow.Show();
+                    }));
+            }
         }
 
-        public ObservableCollection<Coach> Coaches
+        public ObservableCollection<TrainingType> TrainingTypes
         {
-            get => _coaches;
-            set => _coaches = value;
+            get => _trainingTypes;
+            set => _trainingTypes = value;
         }
-        public Coach Coach
+        public TrainingType Coach
         {
-            get => _coach;
+            get => _trainingType;
             set
             {
-                _coach = value;
+                _trainingType = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public TrainingType SelectedCoach
+        {
+            get { return selectedTrainingType; }
+            set 
+            { 
+                selectedTrainingType = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public Training Training
+        {
+            get => _training;
+            set
+            {
+                _training = value;
                 OnPropertyChanged();
             }
         }
 
         public AddTrainingWindowVM()
         {
-            Coaches = new ObservableCollection<Coach>(Helper.GetContext().Coaches.Include(x => x.Name));
+            TrainingTypes = new ObservableCollection<TrainingType>(Helper.GetContext().TrainingTypes);
         }
     }
 }

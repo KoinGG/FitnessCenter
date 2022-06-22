@@ -27,7 +27,7 @@
                     VerticalAlignment="Top" Fill="White"
                     Margin="0,35,0,0"/>
                 <TextBox 
-                    x:Name="CoachNameBox"                     
+                    x:Name="CoachNameBox" Text="{Binding Coach.Name}"                 
                     materialDesign:HintAssist.Hint="Укажите Имя Тренера"
                     Height="35" Width="220" BorderThickness="0.25" Cursor="IBeam"
                     FontSize="14" FontFamily="ArialNova"
@@ -37,7 +37,7 @@
                     Foreground="AliceBlue"
                     Margin="0,30,0,0" />
                 <TextBox 
-                    x:Name="CoachSurnameBox"
+                    x:Name="CoachSurnameBox" Text="{Binding Coach.Surname}"
                     materialDesign:HintAssist.Hint="Укажите Фамилию Тренера"
                     Height="35" Width="220" BorderThickness="0.25" Cursor="IBeam"
                     FontSize="14" FontFamily="ArialNova"
@@ -47,7 +47,7 @@
                     Foreground="AliceBlue"
                     Margin="0,20,0,0" />
                 <TextBox 
-                    x:Name="CoachDescriptionBox"
+                    x:Name="CoachDescriptionBox" Text="{Binding Coach.Description}"
                     materialDesign:HintAssist.Hint="Добавьте Описание Тренера"
                     FontSize="14"
                     Height="80" Width="260" BorderThickness="0.25" Cursor="IBeam"
@@ -61,8 +61,7 @@
                     VerticalAlignment="Top" Fill="White"
                     Margin="0,35,0,0"/>
                 <Button 
-                    Command="{Binding AddCoachAccept}" x:Name="btn_regAccept"
-                    CommandParameter="{Binding ElementName = }"
+                    Command="{Binding AddCoachAccept}" x:Name="btn_addCoachAccept"
                     Content="Подтвердить" VerticalContentAlignment="Center"
                     FontSize="14" FontFamily="ArialNova"
                     HorizontalAlignment="Center" VerticalAlignment="Top"

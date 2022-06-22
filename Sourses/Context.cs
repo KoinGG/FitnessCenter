@@ -26,7 +26,7 @@ namespace FitnessCenter
         public virtual DbSet<SubscriptionType> SubscriptionTypes { get; set; } = null!;
         public virtual DbSet<TrainingType> TrainingTypes { get; set; } = null!;
         public virtual DbSet<User> Users { get; set; } = null!;
-        public virtual DbSet<training> training { get; set; } = null!;
+        public virtual DbSet<Training> Trainings { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -34,6 +34,7 @@ namespace FitnessCenter
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseSqlServer("Data Source=mssql;Database=gr602_stmti;Integrated Security=true; ");
+                optionsBuilder.UseLazyLoadingProxies();
             }
         }
 
@@ -284,7 +285,7 @@ namespace FitnessCenter
                     .HasConstraintName("FK__User__idRoleType__7D439ABD");
             });
 
-            modelBuilder.Entity<training>(entity =>
+            modelBuilder.Entity<Training>(entity =>
             {
                 entity.HasKey(e => e.IdTraining)
                     .HasName("PK__Training__509B5960C1CA935C");
@@ -298,7 +299,7 @@ namespace FitnessCenter
                 entity.Property(e => e.Time).HasMaxLength(25);
 
                 entity.HasOne(d => d.IdTrainingTypeNavigation)
-                    .WithMany(p => p.training)
+                    .WithMany(p => p.Training)
                     .HasForeignKey(d => d.IdTrainingType)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__Training__idTrai__59063A47");

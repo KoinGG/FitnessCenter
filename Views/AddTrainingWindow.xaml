@@ -28,17 +28,24 @@
                     Margin="0,35,0,0"/>
                 <ComboBox
                     x:Name="TrainingTypeBox"                     
-                    materialDesign:HintAssist.Hint="Укажите Имя Тренера"
+                    materialDesign:HintAssist.Hint="Выберите Тип Тренировки"
                     Height="35" Width="220" BorderThickness="0.25" Cursor="IBeam"
                     FontSize="14" FontFamily="ArialNova"
                     VerticalContentAlignment="Center"
-                    ItemsSource="{Binding Coaches}"
+                    ItemsSource="{Binding TrainingTypes}"
+                    SelectedItem="{Binding SelectedTrainingType}"
                     Padding="7 5 0 0"
                     HorizontalAlignment="Center" VerticalAlignment="Top"
                     Foreground="AliceBlue"
-                    Margin="0,30,0,0" />
+                    Margin="0,30,0,0">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Training.Name}" FontSize="14"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
                 <materialDesign:TimePicker
-                    x:Name="TrainingTimeBox"
+                    x:Name="TrainingTimeBox" Text="{Binding Training.Time}"
                     materialDesign:HintAssist.Hint="Укажите Время Тренировки"
                     Height="35" Width="220" BorderThickness="0.25" Cursor="IBeam"
                     FontSize="14" FontFamily="ArialNova"
@@ -48,7 +55,7 @@
                     Foreground="AliceBlue"
                     Margin="0,20,0,0" />
                 <TextBox 
-                    x:Name="TrainingDescriptionBox"
+                    x:Name="TrainingDescriptionBox" Text="{Binding Training.Description}"
                     materialDesign:HintAssist.Hint="Добавьте Описание Тренировки"
                     FontSize="14"
                     Height="80" Width="260" BorderThickness="0.25" Cursor="IBeam"
@@ -63,7 +70,6 @@
                     Margin="0,35,0,0"/>
                 <Button 
                     Command="{Binding AddTrainingAccept}" x:Name="btn_regAccept"
-                    CommandParameter="{Binding ElementName = }"
                     Content="Подтвердить" VerticalContentAlignment="Center"
                     FontSize="14" FontFamily="ArialNova"
                     HorizontalAlignment="Center" VerticalAlignment="Top"

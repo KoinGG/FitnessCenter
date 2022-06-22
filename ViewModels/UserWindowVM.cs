@@ -32,6 +32,20 @@ namespace FitnessCenter.ViewModels
             });
         }
 
+        public RelayCommand Schedule
+        {
+            get
+            {
+                return _schedule ??
+                    (_schedule = new RelayCommand((x) =>
+                    {
+                        ScheduleWindow scheduleWindow = new ScheduleWindow();
+                        App.Current.Windows[0].Close();
+                        scheduleWindow.Show();
+                    }));
+            }
+        }
+
         public User User
         {
             //get { return _user; }

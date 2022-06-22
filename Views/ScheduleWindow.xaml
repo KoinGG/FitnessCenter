@@ -8,9 +8,9 @@
         xmlns:viewModel="clr-namespace:FitnessCenter.ViewModels"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="ScheduleWindow" MinHeight="450" MinWidth="450" Height="450" Width="450">
-    <!--<Window.DataContext>
-        <viewModel:ScheduleWindow/>
-    </Window.DataContext>-->
+    <Window.DataContext>
+        <viewModel:ScheduleWindowVM/>
+    </Window.DataContext>
     <materialDesign:Card Background="{DynamicResource MaterialDesignPaper}">
         <Grid x:Name="ScheduleGrid">
             <Grid.ColumnDefinitions>
@@ -52,7 +52,6 @@
                     Margin="0,35,0,0"/>
                 <Button 
                     Command="{Binding ScheduleAccept}" x:Name="btn_scheduleAccept"
-                    CommandParameter="{Binding ElementName = }"
                     Content="Подтвердить" VerticalContentAlignment="Center"
                     FontSize="14" FontFamily="ArialNova"
                     HorizontalAlignment="Center" VerticalAlignment="Top"

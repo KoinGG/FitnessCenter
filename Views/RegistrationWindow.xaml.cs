@@ -25,7 +25,6 @@ namespace FitnessCenter.Views
         public RegistrationWindow()
         {
             InitializeComponent();
-
         }
     }
 }
